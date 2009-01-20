@@ -1,5 +1,8 @@
 require 'net/http'
 require 'uri'
+require 'rubygems'
+require 'xmlsimple'
+require 'pp'
 
 #http://www.dapper.net/RunDapp?dappName=Craigslist_XML_Minneapolis&v=1&v_item_name=guitar
 base_url = 'http://www.dapper.net/RunDapp'
@@ -24,6 +27,10 @@ if response_object.code.to_i > 200
 end
 
 xml = response_object.body
+
+doc = XmlSimple.xml_in xml
+pp doc
+
 
 
 
