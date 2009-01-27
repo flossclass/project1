@@ -4,7 +4,7 @@ require 'drb'
 
 $SAFE = 1           #This is a special variable that Ruby interprets as the level of safety/paranoia for this script
 
-#Define stuff:
+#The service is running on localhost (127.0.0.1) on port 61676:
 def run_queue(url='druby://127.0.0.1:61676')
   queue = Queue.new # Containing the jobs to be processed
   
