@@ -1,0 +1,80 @@
+
+
+
+database model design:
+
+table 1 - user data:
+
+unique id
+username (could be unique id)
+password
+email address
+
+
+
+
+
+table 2 - searchable drop downs:
+
+unique id
+brand
+model
+year
+
+uid 	brand 	 	model			year
+123 	yamaha 		synth keytar		1981
+124	yamaha 		synth keytar 		1982
+125 	fender		stratocaster thingy	1979
+
+SELECT FROM items WHERE brand = 'yamaha' AND model = 'some synth' AND year = '1996'
+	
+
+
+(NOT USE THIS METHOD HERE)
+table 2a - searchable brands
+
+	ui
+	brand
+
+
+table 2b - searchable models
+
+	ui
+	brand id
+	model
+
+
+table 2c - searchable years
+
+	ui
+	model id
+	year
+
+
+
+
+
+
+
+table 3 - items (user requested searches)
+
+	unique id
+	user id / username (uid from table 1)
+	search id (uid from table 2)
+	requested price
+	date initiated
+	done?
+	
+
+
+
+table 4 - listings (spider returned data)
+
+	unique id
+	item id (uid from table 3)
+	price found
+	url (of store's shopping item page)
+	date /timestamp found
+
+
+	
