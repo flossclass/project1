@@ -2,6 +2,12 @@
 require 'thread'
 require 'drb'
 
+#Argument parsing goes here:
+query = ARGV[0]
+price = ARGV[1]
+request_id = ARGV[2]
+max_listings_returned = ARGV[3]
+
 NAME = 'price scout client'
 
 DRb.start_service
